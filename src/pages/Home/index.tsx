@@ -1,11 +1,10 @@
 import './home.scss';
+import TodoList from 'components/TodoList';
 
 const Home = () => {
   return (
     <div className="todo-container">
-      <h1 className="todo-heading">To Do List</h1>
-      <div className="todo-list">
-      </div>
+        <TodoList />
     </div>
   );
 };

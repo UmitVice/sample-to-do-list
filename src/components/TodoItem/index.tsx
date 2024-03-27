@@ -1,5 +1,5 @@
 import React from 'react';
-import 'todoItem.scss';
+import './todoItem.scss';
 import trashIcon from 'assets/trash-icon.svg';
 
 interface TodoItemProps {

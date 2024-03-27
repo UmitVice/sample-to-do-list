@@ -1,0 +1,27 @@
+.todo-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+  
+    p {
+      margin: 0;
+    }
+  
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  
+    // Completed style
+    &.completed {
+      p {
+        text-decoration: line-through;
+      }
+    }
+  }
+  

@@ -11,7 +11,7 @@ app.use(cors());
 
 // Endpoint to get tasks
 app.get('/api/tasks', (req, res) => {
-  fs.readFile('', 'utf8', (err, data) => {
+  fs.readFile('../mocks/tasks.json', 'utf8', (err, data) => {
     if (err) {
       console.error('Error reading tasks: ', err);
       res.status(500).json({ error: 'Error reading tasks' });

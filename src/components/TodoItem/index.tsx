@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './todoItem.scss';
 import trashIcon from 'assets/trash-icon.svg';
 
@@ -12,13 +12,26 @@ interface TodoItemProps {
 }
 
 const TodoItem: React.FC<TodoItemProps> = ({ todo, onDeleteTodo }) => {
+  const [completed, setCompleted] = useState<boolean>(todo?.completed || false);
+
+  const handleCheckboxChange = () => {
+    setCompleted(!completed);
+  };
+
   const handleDeleteTodo = () => {
     onDeleteTodo(todo.id);
   };
 
   return (
-    <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>
-      {todo.task}
+    <li className={`todo-item ${completed ? 'completed' : ''}`}>
+      <div className="task-container">
+        <input
+          type="checkbox"
+          checked={completed}
+          onChange={handleCheckboxChange}
+        />
+        <p>{todo?.task}</p>
+      </div>
       <button className="trash-button" onClick={handleDeleteTodo}>
         <img src={trashIcon} alt="Delete" className="trash-icon" />
       </button>

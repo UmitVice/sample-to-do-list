@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './todoForm.scss';
 
 interface ToDoFormProps {
   onAddTodo: (task: string) => void;
@@ -15,14 +16,15 @@ const ToDoForm: React.FC<ToDoFormProps> = ({ onAddTodo }) => {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <input
         type="text"
         value={newTodo}
         onChange={(e) => setNewTodo(e.target.value)}
-        placeholder="Enter a new todo"
+        placeholder="New Task"
+        className="task-input"
       />
-      <button onClick={handleAddTodo}>Add Todo</button>
+      <button onClick={handleAddTodo} className="add-button">Add</button>
     </div>
   );
 };

@@ -1,27 +1,49 @@
 .todo-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc; /* Dikdörtgen çerçeve oluştur */
+  border-radius: 4px; /* Köşeleri yuvarla */
+  width: 100%; /* Genişliği %100 olarak ayarla */
+
+  .task-container {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
-  
-    input[type="checkbox"] {
-      margin-right: 10px;
-    }
-  
+    flex-grow: 1; /* Task kısmının genişliğini esnek yap */
+    margin: 20px;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s; /* Renk değişimine geçiş efekti */
+  }
+
+  button:hover {
+    color: #ff0000; /* Üzerine gelince kırmızı olacak */
+  }
+
+  // Completed style
+  &.completed {
     p {
-      margin: 0;
-    }
-  
-    button {
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-  
-    // Completed style
-    &.completed {
-      p {
-        text-decoration: line-through;
-      }
+      text-decoration: line-through;
     }
   }
-  
+
+  .trash-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    flex-shrink: 0; /* Çöp kutusu boyutu esnek olmasın, sabit kalsın */
+  }
+}

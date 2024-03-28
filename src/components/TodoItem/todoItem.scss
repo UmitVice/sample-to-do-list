@@ -1,36 +1,37 @@
 .todo-item {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc; /* Dikdörtgen çerçeve oluştur */
-  border-radius: 4px; /* Köşeleri yuvarla */
-  width: 100%; /* Genişliği %100 olarak ayarla */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
 
   .task-container {
     display: flex;
     align-items: center;
-    flex-grow: 1; /* Task kısmının genişliğini esnek yap */
+    flex-grow: 1;
     margin: 20px;
   }
 
   input[type="checkbox"] {
-    margin-right: 10px;
+    margin-right: 30px;
     margin-top: 8px;
     flex-shrink: 0;
   }
 
   p {
     margin: 0;
+    padding-left: 40px;
   }
 
   button {
     background: none;
     border: none;
     cursor: pointer;
-    transition: color 0.3s; /* Renk değişimine geçiş efekti */
+    transition: color 0.3s;
   }
 
   button:hover {
-    color: #ff0000; /* Üzerine gelince kırmızı olacak */
+    color: #ff0000;
   }
 
   // Completed style
@@ -44,6 +45,6 @@
     width: 20px;
     height: 20px;
     cursor: pointer;
-    flex-shrink: 0; /* Çöp kutusu boyutu esnek olmasın, sabit kalsın */
+    flex-shrink: 0;
   }
 }
